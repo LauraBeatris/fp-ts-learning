@@ -2,7 +2,7 @@
 /**
  * Both pipe and flow are used to compose operations
  */
-import { pipe } from 'fp-ts/function'
+import { pipe, flow } from 'fp-ts/function';
 
 // ===== PIPE ===== 
 
@@ -50,3 +50,21 @@ export const pipeRaw = <A, B, C>(
 ): C => g(f(a))
 
 // ===== FLOW ===== 
+
+/**
+ * The `flow` function performs function composition 
+ * 
+ * In general, if a function receives a single argument (unary) and pipes it
+ * into a series of functions, it's possible to replace it with `flow`
+ */
+
+
+// Example: Composing two functions
+// A -> B -> C 
+const isLongEnough = flow(getValueLength, isAtLeast3)
+isLongEnough('hello') // Evaluates to true 
+
+// Example: Composing three functions
+// A -> B -> C -> D
+const isValid = flow(trim, getValueLength, isAtLeast3)
+isValid(' hello ') // Evaluates to true
