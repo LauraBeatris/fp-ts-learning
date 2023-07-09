@@ -15,7 +15,6 @@ pipe(
   getValueLength
 ); // Evaluates to 5
 
-
 /** 
  * A -> B -> C 
 */
@@ -65,6 +64,18 @@ const isLongEnough = flow(getValueLength, isAtLeast3)
 isLongEnough('hello') // Evaluates to true 
 
 // Example: Composing three functions
+// A -> B -> C 
+const isValid1 = flow(trim, getValueLength, isAtLeast3)
+isValid1(' hello ') // Evaluates to true
+
+// Example: Composing four functions, and the first one receives 2 arguments
 // A -> B -> C -> D
-const isValid = flow(trim, getValueLength, isAtLeast3)
-isValid(' hello ') // Evaluates to true
+const concat = (value1: string, value2: string) => value1 + value2;
+const isValid2 = flow(concat, trim, getValueLength, isAtLeast3)
+isValid2('hey', 'hey') // Evaluates to true
+
+// Raw implementation without library abstraction:
+export const flowRaw = <A, B, C>(
+  f: (a: A) => B,
+  g: (b: B) => C
+) => (a: A): C => g(f(a))
