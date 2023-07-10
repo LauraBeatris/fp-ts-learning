@@ -12,3 +12,4 @@
 # Lessons
 
 - [pipe/flow](./src/pipe-and-flow.ts)
+- [option](./src/option.ts)
