@@ -122,7 +122,7 @@ safeInverse4(0) // 'another value type'
 safeInverse4(2) // 'another value type'
 
 /**
- * Option can also be used to convert from a Nullable value
+ * Option can also be used to be converted from a Nullable value
  * 
  * type Nullable<A> = A | null | undefined 
  * 
