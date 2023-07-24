@@ -14,3 +14,4 @@
 - [pipe/flow](./src/pipe-and-flow.ts)
 - [option](./src/option.ts)
 - [O.map, O.flatten, O.chain](./src/essential-operations.ts)
+- [O.fromPredicate](./src/from-predicate.ts)
