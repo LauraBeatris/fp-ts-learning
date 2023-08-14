@@ -15,3 +15,5 @@
 - [option](./src/option.ts)
 - [O.map, O.flatten, O.chain](./src/essential-operations.ts)
 - [O.fromPredicate](./src/from-predicate.ts)
+- [O.alt, O.getOrElse](./src/option-error-handling.ts)
+- [E.tryCatch](./src/try-catch.ts)
